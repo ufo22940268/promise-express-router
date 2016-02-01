@@ -1,7 +1,10 @@
 # promise-express-router
 
-Promisify express route. Let you return a promise from router handler and it will convert to a json formatted response.
+[![Build Status](https://travis-ci.org/ufo22940268/promise-express-router.svg?branch=master)](https://travis-ci.org/ufo22940268/promise-express-router)
+
+Promisify express router. Let you return a promise from router handler and it will convert to a json formatted response.
 The response format is obey [http-api-design](https://github.com/interagent/http-api-design),
+
 
 ## How to use
 
