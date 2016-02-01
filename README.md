@@ -14,7 +14,7 @@ The response format is obey [http-api-design](https://github.com/interagent/http
 
 ### Normal response
 
-__Code__
+- __Code__
 
 ```javascript
 const PromiseRouter = require('promise-express-router');
@@ -23,7 +23,7 @@ promiseRouter.getAsync('/test', (req, locals) => {
 });
 ```
 
-__Response__
+- __Response__
 
 ```json
 {
@@ -37,7 +37,7 @@ __Response__
 
 ### Error response
 
-__Code__
+- __Code__
 
 ```javascript
 const PromiseRouter = require('promise-express-router');
@@ -46,7 +46,7 @@ promiseRouter.getAsync('/test', (req, locals) => {
 });
 ```
 
-__Response__
+- __Response__
 
 ```json
 {
