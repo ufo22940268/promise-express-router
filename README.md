@@ -16,7 +16,7 @@ The response format is obey [http-api-design](https://github.com/interagent/http
 
 __Code__
 
-```
+```javascript
 const PromiseRouter = require('promise-express-router');
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.resolve({name: 'lilei'});
@@ -25,7 +25,7 @@ promiseRouter.getAsync('/test', (req, locals) => {
 
 __Response__
 
-```
+```json
 {
   result: {
     name: 'lilei'
@@ -39,7 +39,7 @@ __Response__
 
 __Code__
 
-```
+```javascript
 const PromiseRouter = require('promise-express-router');
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.reject(new Error('new error'));
@@ -48,7 +48,7 @@ promiseRouter.getAsync('/test', (req, locals) => {
 
 __Response__
 
-```
+```json
 {
   message: 'Error .....',
   ok: false
