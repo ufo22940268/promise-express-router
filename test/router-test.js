@@ -19,7 +19,7 @@ describe('PromiseRouter', function () {
   });
 
   describe('Get', function () {
-    it("should get promise result 1", function (done) {
+    it("Should get promise result 1", function (done) {
       promiseRouter.getAsync('/test', (req, locals) => {
         return Promise.resolve({a: 1});
       });
@@ -30,7 +30,7 @@ describe('PromiseRouter', function () {
         .end(done);
     });
 
-    it("should response with error stacktrace", function (done) {
+    it("Should response with error stacktrace", function (done) {
       promiseRouter.getAsync('/error', (req, locals) => {
         return Promise.reject(new Error());
       });
@@ -48,7 +48,7 @@ describe('PromiseRouter', function () {
   });
 
   describe('Post', function () {
-    it("should post promise result 1", function (done) {
+    it("Should post promise result 1", function (done) {
       promiseRouter.postAsync('/test', (req, locals) => {
         return Promise.resolve({a: 1});
       });
@@ -59,7 +59,7 @@ describe('PromiseRouter', function () {
         .end(done);
     });
 
-    it("should response with error stacktrace", function (done) {
+    it("Should response with error stacktrace", function (done) {
       promiseRouter.postAsync('/error', (req, locals) => {
         return Promise.reject(new Error());
       });
@@ -75,4 +75,20 @@ describe('PromiseRouter', function () {
         });
     })
   });
+
+  describe('Middleware', function () {
+
+    function createMiddleware(obj) {
+      return (req, res, next) => {
+        Object.assign(res.locals || {}, obj);
+      }
+    }
+
+    it("All handlers should support inserting middleware", function (done) {
+      promiseRouter.postAsync('/middleware', createMiddleware({a: 1}), (req, locals)=> Promise.resolve(locals));
+      request(app).post('/middleware')
+        .expect({result: {a: 1}, ok: true})
+        .end(done);
+    })
+  })
 });
