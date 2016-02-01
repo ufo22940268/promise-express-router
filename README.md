@@ -62,6 +62,8 @@ promiseRouter.getAsync('/test', (req, locals) => {
 - `message` A human readable error message.
 - `code` Error code.
 
+## Api document
+[wiki](https://github.com/ufo22940268/promise-express-router/wiki)
 
 ## Compatibility
 
