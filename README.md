@@ -14,10 +14,10 @@ The response format is obey [http-api-design](https://github.com/interagent/http
 __Code__
 
 ```
-    const PromiseRouter = require('promise-express-router');
-    promiseRouter.getAsync('/test', (req, locals) => {
-      return Promise.resolve({name: 'lilei'});
-    });
+const PromiseRouter = require('promise-express-router');
+promiseRouter.getAsync('/test', (req, locals) => {
+  return Promise.resolve({name: 'lilei'});
+});
 ```
 
 __Response__
@@ -37,10 +37,10 @@ __Response__
 __Code__
 
 ```
-    const PromiseRouter = require('promise-express-router');
-    promiseRouter.getAsync('/test', (req, locals) => {
-      return Promise.reject(new Error('new error'));
-    });
+const PromiseRouter = require('promise-express-router');
+promiseRouter.getAsync('/test', (req, locals) => {
+  return Promise.reject(new Error('new error'));
+});
 ```
 
 __Response__
