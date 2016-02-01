@@ -56,10 +56,10 @@ __Response__
 ```
 
 
-### Compatibility
+## Compatibility
 
 - Node 4.x
 - Node 5.x
 
-### License
+## License
 MIT
