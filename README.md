@@ -27,10 +27,10 @@ __Response__
 
 ```json
 {
-  result: {
-    name: 'lilei'
+  "result": {
+    "name": "lilei"
   },
-  ok: true
+  "ok": true
 }
 ```
 
@@ -50,8 +50,8 @@ __Response__
 
 ```json
 {
-  message: 'Error .....',
-  ok: false
+  "message": "Error .....",
+  "ok": false
 }
 ```
 
