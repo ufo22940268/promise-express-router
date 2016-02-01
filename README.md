@@ -55,8 +55,16 @@ promiseRouter.getAsync('/test', (req, locals) => {
 }
 ```
 
+### Response fields
+
+- `ok` If server error happens, it will be false. Or it's true.
+- `result` Result data.
+- `message` A human readable error message.
+- `code` Error code.
+
 
 ## Compatibility
+
 
 - Node 4.x
 - Node 5.x
