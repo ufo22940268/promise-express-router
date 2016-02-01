@@ -11,7 +11,7 @@ Promisify express route. Let you return a promise from router handler and it wil
 
 ### Normal response
 
-__code__
+__Code__
 
 ```
     const PromiseRouter = require('promise-express-router');
@@ -34,7 +34,7 @@ __Response__
 
 ### Error response
 
-__code__
+__Code__
 
 ```
     const PromiseRouter = require('promise-express-router');
@@ -51,6 +51,8 @@ __Response__
   ok: false
 }
 ```
+
+
 
 ### Compatibility
 
