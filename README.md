@@ -23,7 +23,7 @@ const promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.resolve({name: 'lilei'});
 });
-app.use(promiseRouter);
+app.use(promiseRouter.create());
 ```
 
 - __Response__
@@ -49,7 +49,7 @@ const promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.reject(new Error('new error'));
 });
-app.use(promiseRouter);
+app.use(promiseRouter.create());
 ```
 
 - __Response__
