@@ -19,7 +19,7 @@ The response format is obey to [http-api-design](https://github.com/interagent/h
 ```javascript
 const app = require('express')();
 const PromiseRouter = require('promise-express-router');
-promiseRouter = new PromiseRouter();
+const promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.resolve({name: 'lilei'});
 });
@@ -45,7 +45,7 @@ app.use(promiseRouter);
 ```javascript
 const app = require('express')();
 const PromiseRouter = require('promise-express-router');
-promiseRouter = new PromiseRouter();
+const promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.reject(new Error('new error'));
 });
