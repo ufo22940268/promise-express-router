@@ -6,11 +6,18 @@
   "scripts": {
     "test": "mocha"
   },
+
   "keywords": [
     "express",
     "router",
     "promise"
   ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ufo22940268/promise-express-router"
+  },
+
   "author": "ufo22940268",
   "license": "ISC",
   "devDependencies": {
