@@ -1,6 +1,6 @@
 {
   "name": "promise-express-router",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Express router wrapper. Which can handle promise and correctly make a response using json format.",
   "main": "index.js",
   "scripts": {

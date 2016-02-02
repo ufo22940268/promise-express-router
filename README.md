@@ -17,10 +17,13 @@ The response format is obey to [http-api-design](https://github.com/interagent/h
 - __Code__
 
 ```javascript
+const app = require('express')();
 const PromiseRouter = require('promise-express-router');
+promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.resolve({name: 'lilei'});
 });
+app.use(promiseRouter);
 ```
 
 - __Response__
@@ -40,10 +43,13 @@ promiseRouter.getAsync('/test', (req, locals) => {
 - __Code__
 
 ```javascript
+const app = require('express')();
 const PromiseRouter = require('promise-express-router');
+promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.reject(new Error('new error'));
 });
+app.use(promiseRouter);
 ```
 
 - __Response__
