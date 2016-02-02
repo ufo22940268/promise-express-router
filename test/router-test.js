@@ -81,6 +81,7 @@ describe('PromiseRouter', function () {
     function createMiddleware(obj) {
       return (req, res, next) => {
         Object.assign(res.locals || {}, obj);
+        next();
       }
     }
 
