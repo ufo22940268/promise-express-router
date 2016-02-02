@@ -72,6 +72,10 @@ app.use(promiseRouter.toExpressRouter());
 - `message` A human readable error message.
 - `code` Error code.
 
+## Example
+
+[Here](./example)
+
 ## Compatibility
 
 
