@@ -72,6 +72,29 @@ app.use(promiseRouter.toExpressRouter());
 - `message` A human readable error message.
 - `code` Error code.
 
+
+### Customize response format
+
+You can also customize response format.
+
+```javascript
+promiseRouter = new PromiseRouter({
+  standard: (obj)=> {
+    return {
+      data: obj.result,
+      status: obj.ok
+    }
+  },
+  error: (obj) => {
+    return {
+      error_code: obj.code,
+      stacktrace: obj.msg,
+      normal: obj.ok
+    }
+  }
+});
+```
+
 ## Example
 
 [Here](./example)

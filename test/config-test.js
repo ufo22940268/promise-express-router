@@ -22,33 +22,38 @@ describe('PromiseRouter', function () {
     router.getAsync('/error', (req, locals) => {
       return Promise.reject(new Error());
     });
-    app.use(router.create());
+    app.use(router.toExpressRouter());
   }
 
   beforeEach(function () {
     app = express();
-    console.log(1)
   });
 
   describe('Using configuration 1', function () {
 
     beforeEach(function () {
-      promiseRouter = new PromiseRouter((obj)=> {
-        return {
-          data: obj.result,
-          error_code: obj.code,
-          stacktrace: obj.trace,
-          normal: obj.ok
+      promiseRouter = new PromiseRouter({
+        standard: (obj)=> {
+          return {
+            data: obj.result,
+            status: obj.ok
+          }
+        },
+        error: (obj) => {
+          return {
+            error_code: obj.code,
+            stacktrace: obj.msg,
+            normal: obj.ok
+          }
         }
       });
       onRouterCreated(promiseRouter);
-      console.log(2)
     });
 
     it("Should get normal result ", function (done) {
       request(app)
         .get('/test')
-        .expect({data: {a: 1}, ok: true})
+        .expect({data: {a: 1}, status: true})
         .end(done);
     });
 

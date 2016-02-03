@@ -15,7 +15,7 @@ describe('PromiseRouter', function () {
   beforeEach(function () {
     app = express();
     promiseRouter = new PromiseRouter();
-    app.use(promiseRouter.create());
+    app.use(promiseRouter.toExpressRouter());
   });
 
   describe('Get', function () {
@@ -81,6 +81,7 @@ describe('PromiseRouter', function () {
     function createMiddleware(obj) {
       return (req, res, next) => {
         Object.assign(res.locals || {}, obj);
+        next();
       }
     }
 
