@@ -1,6 +1,7 @@
 # promise-express-router
 
-[![NPM](https://nodei.co/npm/promise-express-router.png)](https://nodei.co/npm/promise-express-router/)
+[![Build Status](https://travis-ci.org/ufo22940268/promise-express-router.svg?branch=master)](https://travis-ci.org/ufo22940268/promise-express-router)
+[![npm version](https://badge.fury.io/js/promise-express-router.svg)](https://badge.fury.io/js/promise-express-router)
 
 Promisify express router. Let you return a promise from router handler and it will convert to a json formatted response.
 The response format is obey to [http-api-design](https://github.com/interagent/http-api-design),

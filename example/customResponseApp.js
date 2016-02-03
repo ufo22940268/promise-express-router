@@ -4,7 +4,22 @@
 "use strict";
 const app = require('express')();
 const PromiseRouter = require('../');
-const promiseRouter = new PromiseRouter();
+const promiseRouter = new PromiseRouter({
+  standard: (obj)=> {
+    return {
+      data: obj.result,
+      status: obj.ok
+    }
+  },
+  error: (obj) => {
+    return {
+      error_code: obj.code,
+      stacktrace: obj.msg,
+      normal: obj.ok
+    }
+  }
+});
+
 promiseRouter.getAsync('/', (req, locals) => {
   return Promise.resolve({say: 'hello world'});
 });
@@ -16,3 +31,6 @@ app.use(promiseRouter.toExpressRouter());
 
 console.log(`Open browser http://127.0.0.1:3000`);
 app.listen(3000);
+
+
+
