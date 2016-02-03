@@ -1,16 +1,23 @@
 {
   "name": "promise-express-router",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "Express router wrapper. Which can handle promise and correctly make a response using json format.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
+
   "keywords": [
     "express",
     "router",
     "promise"
   ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ufo22940268/promise-express-router"
+  },
+
   "author": "ufo22940268",
   "license": "ISC",
   "devDependencies": {

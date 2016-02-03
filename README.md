@@ -1,9 +1,13 @@
 # promise-express-router
 
 [![Build Status](https://travis-ci.org/ufo22940268/promise-express-router.svg?branch=master)](https://travis-ci.org/ufo22940268/promise-express-router)
+[![npm version](https://badge.fury.io/js/promise-express-router.svg)](https://badge.fury.io/js/promise-express-router)
 
 Promisify express router. Let you return a promise from router handler and it will convert to a json formatted response.
 The response format is obey to [http-api-design](https://github.com/interagent/http-api-design),
+
+## Document
+[wiki](https://github.com/ufo22940268/promise-express-router/wiki)
 
 
 ## How to use
@@ -17,10 +21,13 @@ The response format is obey to [http-api-design](https://github.com/interagent/h
 - __Code__
 
 ```javascript
+const app = require('express')();
 const PromiseRouter = require('promise-express-router');
+const promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.resolve({name: 'lilei'});
 });
+app.use(promiseRouter.toExpressRouter());
 ```
 
 - __Response__
@@ -40,10 +47,13 @@ promiseRouter.getAsync('/test', (req, locals) => {
 - __Code__
 
 ```javascript
+const app = require('express')();
 const PromiseRouter = require('promise-express-router');
+const promiseRouter = new PromiseRouter();
 promiseRouter.getAsync('/test', (req, locals) => {
   return Promise.reject(new Error('new error'));
 });
+app.use(promiseRouter.toExpressRouter());
 ```
 
 - __Response__
@@ -62,8 +72,9 @@ promiseRouter.getAsync('/test', (req, locals) => {
 - `message` A human readable error message.
 - `code` Error code.
 
-## Api document
-[wiki](https://github.com/ufo22940268/promise-express-router/wiki)
+## Example
+
+[Here](./example)
 
 ## Compatibility
 
